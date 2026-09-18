@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hongos y Estrellas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scene" id="scene">
+    <div class="stars"></div>
+
+    <main class="book-wrap">
+      <div class="book" id="book">
+        <div class="page left">
+          <div class="page-content">
+            <span class="chapter" id="chapter">PRÓLOGO</span>
+            <h1 id="title">Hongos y Estrellas</h1>
+            <p id="leftText">
+              Entre los confines del universo, los granos de arena,
+              millones de constelaciones e incontables bacterias...
+            </p>
+          </div>
+          <div class="page-number" id="leftNumber">1</div>
+        </div>
+
+        <div class="page right">
+          <div class="page-content">
+            <span class="chapter" id="mobileChapter">PRÓLOGO</span>
+            <h1 id="mobileTitle">Hongos y Estrellas</h1>
+            <p id="rightText">
+              Hay dos vidas.<br>
+              Dos vidas ajenas, dos vidas separadas.<br>
+              Dos vidas, lejanas.
+            </p>
+          </div>
+          <div class="page-number" id="rightNumber">2</div>
+        </div>
+
+        <div class="page-turn" id="pageTurn">
+          <div class="page turn-front"></div>
+          <div class="page turn-back"></div>
+        </div>
+      </div>
+    </main>
+
+    <div class="controls">
+      <button id="prev" aria-label="Página anterior">←</button>
+      <span><b id="current">1</b> / <span id="total">15</span></span>
+      <button id="next" aria-label="Página siguiente">→</button>
+    </div>
+
+    <div class="hint">Usa las flechas ← → o las teclas de dirección</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
