@@ -515,3 +515,63 @@ window.addEventListener("resize", render);
 
 /* Initial scene */
 render();
+
+/* =========================================================
+   ÁLBUM FINAL
+   ========================================================= */
+
+const memoryAlbum = document.getElementById("memoryAlbum");
+const albumBack = document.getElementById("albumBack");
+
+function showAlbum() {
+  if (!memoryAlbum) return;
+
+  memoryAlbum.classList.add("visible");
+  memoryAlbum.setAttribute("aria-hidden", "false");
+
+  document.body.classList.add("album-open");
+
+  memoryAlbum.scrollTop = 0;
+}
+
+function hideAlbum() {
+  if (!memoryAlbum) return;
+
+  memoryAlbum.classList.remove("visible");
+  memoryAlbum.setAttribute("aria-hidden", "true");
+
+  document.body.classList.remove("album-open");
+}
+
+albumBack?.addEventListener("click", hideAlbum);
+
+
+/* =========================================================
+   ABRIR ÁLBUM AL TERMINAR
+   ========================================================= */
+
+document
+  .getElementById("next")
+  ?.addEventListener("click", () => {
+
+    if (index === scenes.length - 1) {
+      showAlbum();
+    }
+
+  });
+
+
+/* =========================================================
+   ESCAPE PARA VOLVER
+   ========================================================= */
+
+document.addEventListener("keydown", (e) => {
+
+  if (
+    e.key === "Escape" &&
+    memoryAlbum?.classList.contains("visible")
+  ) {
+    hideAlbum();
+  }
+
+});
